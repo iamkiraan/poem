@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अनकहा — Kiran Acharya | Unsaid Words</title>
+<meta name="description" content="A quiet digital home for the poetry of Kiran Acharya — love, loneliness, memory and everything left unsaid.">
+
+<!-- Fonts: Fraunces (display/serif headlines), Newsreader (reading serif), Inter (interface) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ PAGE LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <span class="loader-mark">अ</span>
+</div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div id="scroll-progress" aria-hidden="true"><span></span></div>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand" data-nav-link>
+      <span class="brand-mark">अनकहा</span>
+      <span class="brand-sub">Kiran Acharya</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" data-nav-link data-section="home">Home</a></li>
+      <li><a href="#about" data-nav-link data-section="about">About</a></li>
+      <li><a href="#poems" data-nav-link data-section="poems">Poems</a></li>
+      <li><a href="#featured" data-nav-link data-section="featured">Featured</a></li>
+      <li><a href="#random" data-nav-link data-section="random">Random Poem</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Switch between dark and light theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.4"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+
+      <button id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="home" class="section hero">
+  <canvas id="firefly-canvas" aria-hidden="true"></canvas>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal-line">शब्दहरूको एक शान्त संसार</p>
+    <h1 class="hero-name">
+      <span class="reveal-line" style="--d:1">KIRAN</span>
+      <span class="reveal-line" style="--d:2">ACHARYA</span>
+    </h1>
+    <p class="hero-tagline" id="hero-tagline" aria-live="polite"></p>
+
+    <a href="#poems" class="btn btn-primary hero-cta" data-nav-link>
+      <span>Explore My Words</span>
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><span></span></div>
+</header>
+
+<main>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section about-section reveal-on-scroll">
+    <svg class="about-mark" viewBox="0 0 64 44" aria-hidden="true"><path d="M14 0C6 4 0 12 0 22c0 12 8 22 20 22v-8c-8 0-12-6-12-12h6V0H14Zm34 0c-8 4-14 12-14 22 0 12 8 22 20 22v-8c-8 0-12-6-12-12h6V0H48Z" fill="currentColor"/></svg>
+    <p class="eyebrow">About</p>
+    <h2 class="section-title serif-italic">Kiran Acharya</h2>
+    <p class="about-text">
+      I write in the spaces between what happened and what I wished had happened.
+      Some feelings arrive too large for conversation, so they wait here instead —
+      folded into lines, kept a little safer on the page than they ever were in my chest.
+      This is not a diary and not quite a confession. It is somewhere quieter than both.
+    </p>
+  </section>
+
+  <!-- ============ POEMS ============ -->
+  <section id="poems" class="section poems-section">
+    <p class="eyebrow center">The Collection</p>
+    <h2 class="section-title serif-italic center reveal-on-scroll">Poems</h2>
+
+    <div class="poems-controls reveal-on-scroll">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.4"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <input type="text" id="poem-search" placeholder="Search a title, a word, a feeling…" aria-label="Search poems">
+      </div>
+
+      <div class="filter-chips" id="filter-chips">
+        <button class="chip is-active" data-category="All">All</button>
+        <!-- category chips injected by script.js -->
+      </div>
+    </div>
+
+    <p class="poems-empty" id="poems-empty" hidden>No poems found. Try another word, or another feeling.</p>
+
+    <div class="poems-grid" id="poems-grid"><!-- poem cards injected by script.js --></div>
+  </section>
+
+  <!-- ============ FEATURED ============ -->
+  <section id="featured" class="section featured-section reveal-on-scroll">
+    <p class="eyebrow">Featured Words</p>
+    <div class="featured-wrap" id="featured-wrap">
+      <div class="featured-art" aria-hidden="true">
+        <svg viewBox="0 0 220 220"><path class="ink-blot" d="M110 8c34 0 42 26 62 38 22 13 30 40 20 66-9 24-8 46-30 62-24 18-56 20-82 6-24-13-34-38-38-64-4-28 4-52 24-72 12-12 26-36 44-36Z" /></svg>
+      </div>
+      <div class="featured-body">
+        <p class="featured-tag" id="featured-tag">Loneliness</p>
+        <blockquote class="featured-quote serif-italic" id="featured-quote">Loading…</blockquote>
+        <p class="featured-title" id="featured-title">—</p>
+        <button class="btn btn-ghost" id="featured-read-btn">Read the full poem</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LINE / QUOTE STRIP ============ -->
+  <section class="section line-strip reveal-on-scroll" aria-live="off">
+    <p class="line-strip-label">A line, at random</p>
+    <p class="line-strip-text serif-italic" id="random-line">—</p>
+  </section>
+
+  <!-- ============ RANDOM POEM ============ -->
+  <section id="random" class="section random-section reveal-on-scroll">
+    <p class="eyebrow center">Feeling Undecided?</p>
+    <h2 class="section-title serif-italic center">Let the page choose for you</h2>
+    <button class="btn btn-primary btn-large" id="surprise-btn">
+      <span>Surprise Me</span>
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h4l3 5-3 5H4M20 4h-4l-3 5 3 5h4M9 14l3 5 3-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-mark">अनकहा</span>
+    <p class="footer-name">Kiran Acharya</p>
+    <p class="footer-rights">© All poems belong to their respective author. All rights reserved.</p>
+    <a class="footer-social" href="https://www.facebook.com/juniorneymar.aacharya" target="_blank" rel="noopener noreferrer" aria-label="Kiran Acharya on Facebook">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M15 8.5h2.2V5.3c-.4-.05-1.7-.16-3.2-.16-3.2 0-5.4 1.96-5.4 5.55v2.9H5.4v3.6h3.2V22h3.7v-4.8h3.1l.5-3.6h-3.6v-2.5c0-1.04.29-1.75 1.9-1.75Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</footer>
+
+<!-- ============ POEM READING MODAL ============ -->
+<div class="poem-modal" id="poem-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-progress" aria-hidden="true"><span id="modal-progress-fill"></span></div>
+
+  <div class="modal-inner">
+    <div class="modal-topbar">
+      <span class="modal-tag" id="modal-tag">Category</span>
+      <button class="modal-close" id="modal-close" aria-label="Close poem">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-scroll" id="modal-scroll">
+      <h2 class="modal-title serif-italic" id="modal-title">—</h2>
+      <p class="modal-body" id="modal-body">—</p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="modal-nav-btn" id="modal-prev" aria-label="Previous poem">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Previous</span>
+      </button>
+      <span class="modal-count" id="modal-count">1 / 5</span>
+      <button class="modal-nav-btn" id="modal-next" aria-label="Next poem">
+        <span>Next</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="poems.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
